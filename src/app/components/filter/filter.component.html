@@ -1,0 +1,13 @@
+
+<div class="filters">
+    <div class="filter" *ngFor="let filter of filters | keyvalue | orderBy : 'asc' : 'value.order'">
+        <div class="title">
+            {{filter.value.title}}
+        </div>
+        <div class="body">
+            <div class="buttons" *ngFor="let item of filter.value.data; let i = index">
+                <button (click)="apply(item, filter.key, i)" [ngClass]="{'checked': item.checked}">{{item.value}}</button>
+            </div>
+        </div>
+    </div>
+</div>

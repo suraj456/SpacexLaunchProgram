@@ -1,0 +1,54 @@
+
+<div class="row">
+    <div class="col col-tb-2 col-lg-4" *ngFor="let LaunchProgram of LaunchPrograms">
+        <div class="card" >
+            <figure>
+                <img [src]="LaunchProgram?.links?.mission_patch_small" [alt]="LaunchProgram.mission_name">
+            </figure>
+            <div class="card-tb">
+                <div class="card-tb-rw">
+                    <div class="card-tb-cl title">
+                        {{LaunchProgram.mission_name}}
+                    </div>
+                </div>
+                <div class="card-tb-rw">
+
+                    <div class="card-tb-cl">
+                        <span>Mission Ids</span>
+                    </div>
+                    <div class="card-tb-cl">
+                        {{LaunchProgram?.mission_id?.join() || 'NA'}}
+                    </div>
+                </div>
+                <div class="card-tb-rw">
+                    <div class="card-tb-cl">
+                        <span>Launch Year</span>
+                    </div>
+                    <div class="card-tb-cl">
+                        {{LaunchProgram?.launch_year}}
+                    </div>
+                </div>
+                <div class="card-tb-rw">
+                    <div class="card-tb-cl">
+                        <span>Successful Launch</span>
+                    </div>
+                    <div class="card-tb-cl">
+                        {{LaunchProgram?.launch_success}}
+                    </div>
+                </div>
+                <div class="card-tb-rw">
+                    <div class="card-tb-cl">
+                        <span>Successful Landing</span>
+                    </div>
+                    <div class="card-tb-cl">
+                        {{LaunchProgram?.launch_landing || 'NA'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
